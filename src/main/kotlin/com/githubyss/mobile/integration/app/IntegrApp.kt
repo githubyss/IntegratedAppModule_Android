@@ -24,7 +24,7 @@ class IntegrApp : Application() {
         instance = this@IntegrApp
 
         initARouter(instance)
-        initLog(ComkitLogcatUtils.LOG_LEVEL_INFO)
+        initLog(ComkitLogcatUtils.LOG_LEVEL_DEBUG)
     }
 
     /** Inner static singleton mode. by Ace Yan */
