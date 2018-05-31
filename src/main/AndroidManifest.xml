@@ -25,7 +25,7 @@
                 android:name=".entrance.IntegrEntranceActivity"
                 android:label="@string/integrAppName"
                 android:screenOrientation="portrait"
-                android:theme="@style/comkitAppTheme"
+                android:theme="@style/comkitTranslucentFullscreenTheme"
                 >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

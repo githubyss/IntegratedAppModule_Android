@@ -21,7 +21,7 @@ class IntegrHomepageActivity : ComkitBaseActivity() {
         super.onCreate(savedInstanceState)
 
         val fragment = ARouter.getInstance().build("/integration/app/homepage/IntegrHomepageFragment").navigation() as Fragment
-        addFragment(fragment, "/integration/app/homepage/IntegrHomepageFragment", false)
+        addFragment(fragment, "IntegrHomepageFragment", false)
     }
 
     override fun onResume() {

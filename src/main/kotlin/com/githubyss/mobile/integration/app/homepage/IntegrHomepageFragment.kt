@@ -22,7 +22,7 @@ import kotlinx.android.synthetic.main.integr_fragment_homepage.*
 @Route(path = "/integration/app/homepage/IntegrHomepageFragment")
 class IntegrHomepageFragment : ComkitBaseFragment() {
     companion object {
-        val TAG = "/integration/app/homepage/IntegrHomepageFragment"
+        val TAG = "IntegrHomepageFragment"
     }
 
     private lateinit var rootView: View
@@ -30,7 +30,7 @@ class IntegrHomepageFragment : ComkitBaseFragment() {
     private lateinit var integrHomepageIPresenter: IntegrHomepageContract.IPresenter
     private var integrHomepageIView = object : IntegrHomepageContract.IView {
         override fun setPresenter(iPresenter: IntegrHomepageContract.IPresenter) {
-            integrHomepageIPresenter = iPresenter
+            this@IntegrHomepageFragment.integrHomepageIPresenter = iPresenter
         }
 
         override fun gotoMorseCodePage() {
@@ -56,12 +56,12 @@ class IntegrHomepageFragment : ComkitBaseFragment() {
     }
 
     override fun bindPresenter() {
-        IntegrHomepagePresenter(integrHomepageIView)
+        IntegrHomepagePresenter(this@IntegrHomepageFragment.integrHomepageIView)
     }
 
     override fun initView() {
-        btnMorseCodeSdk.setOnClickListener(onClickListener)
-        btnPasswordBankSdk.setOnClickListener(onClickListener)
+        btnMorseCodeSdk.setOnClickListener(this@IntegrHomepageFragment.onClickListener)
+        btnPasswordBankSdk.setOnClickListener(this@IntegrHomepageFragment.onClickListener)
     }
 
 
@@ -69,11 +69,11 @@ class IntegrHomepageFragment : ComkitBaseFragment() {
         super.onCreate(savedInstanceState)
 
         bindPresenter()
-        integrHomepageIPresenter.onStandby()
+        this@IntegrHomepageFragment.integrHomepageIPresenter.onStandby()
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        return inflater?.inflate(R.layout.integr_fragment_homepage, container, false) ?: rootView
+        return inflater?.inflate(R.layout.integr_fragment_homepage, container, false) ?: this@IntegrHomepageFragment.rootView
     }
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
@@ -85,6 +85,6 @@ class IntegrHomepageFragment : ComkitBaseFragment() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        integrHomepageIPresenter.onActivityResult(requestCode, resultCode)
+        this@IntegrHomepageFragment.integrHomepageIPresenter.onActivityResult(requestCode, resultCode)
     }
 }

@@ -19,7 +19,7 @@ class IntegrEntranceActivity : ComkitBaseActivity() {
     private lateinit var integrEntranceIPresenter: IntegrEntranceContract.IPresenter
     private var integrEntranceIView = object : IntegrEntranceContract.IView {
         override fun setPresenter(iPresenter: IntegrEntranceContract.IPresenter) {
-            integrEntranceIPresenter = iPresenter
+            this@IntegrEntranceActivity.integrEntranceIPresenter = iPresenter
         }
 
         override fun gotoHomepage() {
@@ -29,17 +29,18 @@ class IntegrEntranceActivity : ComkitBaseActivity() {
     }
 
     override fun bindPresenter() {
-        IntegrEntrancePresenter(integrEntranceIView)
+        IntegrEntrancePresenter(this@IntegrEntranceActivity.integrEntranceIView)
     }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindPresenter()
-        integrEntranceIPresenter.onStandby()
+        this@IntegrEntranceActivity.integrEntranceIPresenter.onStandby()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        integrEntranceIPresenter.onActivityResult(requestCode, resultCode)
+        this@IntegrEntranceActivity.integrEntranceIPresenter.onActivityResult(requestCode, resultCode)
     }
 }
