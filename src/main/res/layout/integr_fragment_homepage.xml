@@ -8,33 +8,40 @@
 
     <ScrollView
             style="@style/comkitBothMatchParentStyle"
-            android:layout_marginLeft="@dimen/comkitSideMarginDefault"
-            android:layout_marginRight="@dimen/comkitSideMarginDefault"
             android:fillViewport="true"
             android:scrollbars="none"
             >
 
         <LinearLayout
-                android:id="@+id/llBtnContainer"
-                style="@style/comkitOnlyWidthMatchParentLayoutStyle"
+                android:id="@+id/llSvContent"
+                style="@style/comkitBothMatchParentStyle"
+                android:layout_marginLeft="@dimen/comkitSideMarginDefault"
+                android:layout_marginRight="@dimen/comkitSideMarginDefault"
                 android:orientation="vertical"
                 >
 
-            <Button
-                    android:id="@+id/btnMorseCodeSdk"
-                    style="@style/comkitCommonBtnDefaultStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/integrHomepageMorseCodeSdk"
-                    />
+            <LinearLayout
+                    android:id="@+id/llBtnContainer"
+                    style="@style/comkitOnlyWidthMatchParentLayoutStyle"
+                    android:orientation="vertical"
+                    >
 
-            <Button
-                    android:id="@+id/btnPasswordBankSdk"
-                    style="@style/comkitCommonBtnDefaultStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/integrHomepagePasswordBankSdk"
-                    />
+                <Button
+                        android:id="@+id/btnMorseCodeSdk"
+                        style="@style/comkitCommonBtnDefaultStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/integrHomepageMorseCodeSdk"
+                        />
+
+                <Button
+                        android:id="@+id/btnPasswordBankSdk"
+                        style="@style/comkitCommonBtnDefaultStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/integrHomepagePasswordBankSdk"
+                        />
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

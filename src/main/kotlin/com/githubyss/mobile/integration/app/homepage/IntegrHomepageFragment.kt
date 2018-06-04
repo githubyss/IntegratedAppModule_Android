@@ -73,7 +73,8 @@ class IntegrHomepageFragment : ComkitBaseFragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        return inflater?.inflate(R.layout.integr_fragment_homepage, container, false) ?: this@IntegrHomepageFragment.rootView
+        this@IntegrHomepageFragment.rootView = inflater?.inflate(R.layout.integr_fragment_homepage, container, false) ?: this@IntegrHomepageFragment.rootView
+        return this@IntegrHomepageFragment.rootView
     }
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {

@@ -2,6 +2,7 @@ package com.githubyss.mobile.integration.app
 
 import android.app.Application
 import com.alibaba.android.arouter.launcher.ARouter
+import com.githubyss.mobile.common.kit.ComkitApplication
 import com.githubyss.mobile.common.kit.util.ComkitLogcatUtils
 
 /**
@@ -21,9 +22,11 @@ class IntegrApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        instance = this@IntegrApp
+        IntegrApp.instance = this@IntegrApp
 
-        initARouter(instance)
+        initARouter(IntegrApp.instance)
+        initComkit(IntegrApp.instance)
+
         initLog(ComkitLogcatUtils.LOG_LEVEL_DEBUG)
     }
 
@@ -48,6 +51,10 @@ class IntegrApp : Application() {
             ARouter.openDebug()
         }
         ARouter.init(application)
+    }
+
+    private fun initComkit(application: IntegrApp) {
+        ComkitApplication.init(application)
     }
 
     private fun initLog(level: Int) {
