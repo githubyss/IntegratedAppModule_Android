@@ -30,7 +30,7 @@ class IntegrHomepageFragment : ComkitBaseFragment() {
     private lateinit var integrHomepageIPresenter: IntegrHomepageContract.IPresenter
     private var integrHomepageIView = object : IntegrHomepageContract.IView {
         override fun setPresenter(iPresenter: IntegrHomepageContract.IPresenter) {
-            this@IntegrHomepageFragment.integrHomepageIPresenter = iPresenter
+            integrHomepageIPresenter = iPresenter
         }
 
         override fun gotoMorseCodePage() {
@@ -56,12 +56,12 @@ class IntegrHomepageFragment : ComkitBaseFragment() {
     }
 
     override fun bindPresenter() {
-        IntegrHomepagePresenter(this@IntegrHomepageFragment.integrHomepageIView)
+        IntegrHomepagePresenter(integrHomepageIView)
     }
 
     override fun initView() {
-        btnMorseCodeSdk.setOnClickListener(this@IntegrHomepageFragment.onClickListener)
-        btnPasswordBankSdk.setOnClickListener(this@IntegrHomepageFragment.onClickListener)
+        btnMorseCodeSdk.setOnClickListener(onClickListener)
+        btnPasswordBankSdk.setOnClickListener(onClickListener)
     }
 
 
@@ -69,12 +69,12 @@ class IntegrHomepageFragment : ComkitBaseFragment() {
         super.onCreate(savedInstanceState)
 
         bindPresenter()
-        this@IntegrHomepageFragment.integrHomepageIPresenter.onStandby()
+        integrHomepageIPresenter.onStandby()
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        this@IntegrHomepageFragment.rootView = inflater?.inflate(R.layout.integr_fragment_homepage, container, false) ?: this@IntegrHomepageFragment.rootView
-        return this@IntegrHomepageFragment.rootView
+        rootView = inflater?.inflate(R.layout.integr_fragment_homepage, container, false) ?: rootView
+        return rootView
     }
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
@@ -86,6 +86,6 @@ class IntegrHomepageFragment : ComkitBaseFragment() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        this@IntegrHomepageFragment.integrHomepageIPresenter.onActivityResult(requestCode, resultCode)
+        integrHomepageIPresenter.onActivityResult(requestCode, resultCode)
     }
 }

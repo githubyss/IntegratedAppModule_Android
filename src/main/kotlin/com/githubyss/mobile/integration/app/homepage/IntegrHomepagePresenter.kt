@@ -18,15 +18,15 @@ class IntegrHomepagePresenter(iView: IntegrHomepageContract.IView) {
         }
 
         override fun onMorseCodeBtnClick() {
-            this@IntegrHomepagePresenter.integrHomepageIView.gotoMorseCodePage()
+            integrHomepageIView.gotoMorseCodePage()
         }
 
         override fun onPasswordBankBtnClick() {
-            this@IntegrHomepagePresenter.integrHomepageIView.gotoPasswordBankPage()
+            integrHomepageIView.gotoPasswordBankPage()
         }
     }
 
     init {
-        this@IntegrHomepagePresenter.integrHomepageIView.setPresenter(this@IntegrHomepagePresenter.integrHomepageIPresenter)
+        integrHomepageIView.setPresenter(integrHomepageIPresenter)
     }
 }

@@ -12,7 +12,7 @@ class IntegrEntrancePresenter(iView: IntegrEntranceContract.IView) {
     private var integrEntranceIView = iView
     private var integrEntranceIPresenter = object : IntegrEntranceContract.IPresenter {
         override fun onStandby() {
-            this@IntegrEntrancePresenter.integrEntranceIView.gotoHomepage()
+            integrEntranceIView.gotoHomepage()
         }
 
         override fun onActivityResult(requestCode: Int, resultCode: Int) {
@@ -20,6 +20,6 @@ class IntegrEntrancePresenter(iView: IntegrEntranceContract.IView) {
     }
 
     init {
-        this@IntegrEntrancePresenter.integrEntranceIView.setPresenter(this@IntegrEntrancePresenter.integrEntranceIPresenter)
+        integrEntranceIView.setPresenter(integrEntranceIPresenter)
     }
 }
