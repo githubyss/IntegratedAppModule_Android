@@ -16,7 +16,10 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation project(':CommonKitSdk_Android')
-    implementation project(':MorseCodeSdk_Android')
+    implementation project(':CommonNetworkSdk_Android')
+    implementation project(':CommonUiSdk_Android')
+    implementation project(':CommonResSdk_Android')
+    implementation project(':MorseCodeAppModule_Android')
 
     /* Kotlin */
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$KOTLIN_VERSION"
@@ -32,9 +35,9 @@ dependencies {
     kapt "com.alibaba:arouter-compiler:$AROUTER_COMPILE_VERSION"
 
     /* Test */
-//    testImplementation 'junit:junit:4.12'
-//    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-//    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    testImplementation "junit:junit:$JUNIT_VERSION"
+    androidTestImplementation "com.android.support.test:runner:$ANDROID_TEST_RUNNER_VERSION"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:$ANDROID_TEST_ESPRESSO_CORE_VERSION"
 }
 
 android {
@@ -84,5 +87,13 @@ android {
 
             buildConfigField("Boolean", "LOG_DEBUG", "false")
         }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
     }
 }

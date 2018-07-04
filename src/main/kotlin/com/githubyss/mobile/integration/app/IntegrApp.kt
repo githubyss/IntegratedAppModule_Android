@@ -4,6 +4,7 @@ import android.app.Application
 import com.alibaba.android.arouter.launcher.ARouter
 import com.githubyss.mobile.common.kit.ComkitApplication
 import com.githubyss.mobile.common.kit.util.ComkitLogcatUtils
+import com.githubyss.mobile.common.network.ComnetApplication
 
 /**
  * IntegrApp.kt
@@ -14,7 +15,6 @@ import com.githubyss.mobile.common.kit.util.ComkitLogcatUtils
  * @github githubyss
  */
 class IntegrApp : Application() {
-    /**  by Ace Yan */
     companion object {
         lateinit var instance: IntegrApp
             private set
@@ -22,12 +22,13 @@ class IntegrApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        IntegrApp.instance = this@IntegrApp
+        instance = this@IntegrApp
 
-        initARouter(IntegrApp.instance)
-        initComkit(IntegrApp.instance)
+        initARouter(instance)
+        initComkit(instance)
+        initComnet(instance)
 
-        initLog(ComkitLogcatUtils.LOG_LEVEL_DEBUG)
+        initLog(ComkitLogcatUtils.LOG_LEVEL_VERBOSE)
     }
 
     /** Inner static singleton mode. by Ace Yan */
@@ -54,7 +55,11 @@ class IntegrApp : Application() {
     }
 
     private fun initComkit(application: IntegrApp) {
-        ComkitApplication.init(application)
+        ComkitApplication.instance.init(application)
+    }
+
+    private fun initComnet(application: IntegrApp) {
+        ComnetApplication.instance.init(application)
     }
 
     private fun initLog(level: Int) {
