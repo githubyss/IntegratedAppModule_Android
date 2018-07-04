@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
-import com.githubyss.mobile.common.kit.base.ComkitBaseFragment
+import com.githubyss.mobile.common.ui.basemvp.ComuiBaseFragment
 import com.githubyss.mobile.integration.app.R
 import kotlinx.android.synthetic.main.integr_fragment_homepage.*
 
@@ -20,7 +20,7 @@ import kotlinx.android.synthetic.main.integr_fragment_homepage.*
  * @github githubyss
  */
 @Route(path = "/integration/app/homepage/IntegrHomepageFragment")
-class IntegrHomepageFragment : ComkitBaseFragment() {
+class IntegrHomepageFragment : ComuiBaseFragment() {
     companion object {
         val TAG = "IntegrHomepageFragment"
     }

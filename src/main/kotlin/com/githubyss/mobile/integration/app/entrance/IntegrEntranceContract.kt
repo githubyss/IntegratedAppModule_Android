@@ -1,7 +1,7 @@
 package com.githubyss.mobile.integration.app.entrance
 
-import com.githubyss.mobile.common.kit.base.ComkitIBasePresenter
-import com.githubyss.mobile.common.kit.base.ComkitIBaseView
+import com.githubyss.mobile.common.ui.basemvp.ComuiIBasePresenter
+import com.githubyss.mobile.common.ui.basemvp.ComuiIBaseView
 
 /**
  * IntegrEntranceContract.kt
@@ -12,11 +12,11 @@ import com.githubyss.mobile.common.kit.base.ComkitIBaseView
  * @github githubyss
  */
 interface IntegrEntranceContract {
-    interface IView : ComkitIBaseView<IPresenter> {
+    interface IView : ComuiIBaseView<IPresenter> {
         fun gotoHomepage()
     }
 
-    interface IPresenter : ComkitIBasePresenter {
+    interface IPresenter : ComuiIBasePresenter {
         fun onActivityResult(requestCode: Int, resultCode: Int)
     }
 }

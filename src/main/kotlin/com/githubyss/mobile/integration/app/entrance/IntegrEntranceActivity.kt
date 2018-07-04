@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
-import com.githubyss.mobile.common.kit.base.ComkitBaseActivity
+import com.githubyss.mobile.common.ui.basemvp.ComuiBaseActivity
 
 /**
  * IntegrEntranceActivity.kt
@@ -15,7 +15,7 @@ import com.githubyss.mobile.common.kit.base.ComkitBaseActivity
  * @github githubyss
  */
 @Route(path = "/integration/app/entrance/IntegrEntranceActivity")
-class IntegrEntranceActivity : ComkitBaseActivity() {
+class IntegrEntranceActivity : ComuiBaseActivity() {
     private lateinit var integrEntranceIPresenter: IntegrEntranceContract.IPresenter
     private var integrEntranceIView = object : IntegrEntranceContract.IView {
         override fun setPresenter(iPresenter: IntegrEntranceContract.IPresenter) {

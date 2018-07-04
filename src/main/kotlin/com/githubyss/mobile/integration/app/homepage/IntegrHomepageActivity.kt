@@ -4,7 +4,7 @@ import android.app.Fragment
 import android.os.Bundle
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
-import com.githubyss.mobile.common.kit.base.ComkitBaseActivity
+import com.githubyss.mobile.common.ui.basemvp.ComuiBaseActivity
 import com.githubyss.mobile.integration.app.R
 
 /**
@@ -16,7 +16,7 @@ import com.githubyss.mobile.integration.app.R
  * @github githubyss
  */
 @Route(path = "/integration/app/homepage/IntegrHomepageActivity")
-class IntegrHomepageActivity : ComkitBaseActivity() {
+class IntegrHomepageActivity : ComuiBaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

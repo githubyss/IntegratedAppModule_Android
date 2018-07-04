@@ -15,14 +15,14 @@
             android:label="@string/integrAppName"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
-            android:theme="@style/comkitAppTheme"
+            android:theme="@style/comresAppTheme"
             >
 
         <activity
                 android:name=".entrance.IntegrEntranceActivity"
                 android:label="@string/integrAppName"
                 android:screenOrientation="portrait"
-                android:theme="@style/comkitTranslucentFullscreenTheme"
+                android:theme="@style/comresTranslucentFullscreenTheme"
                 >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,7 +34,7 @@
                 android:name=".homepage.IntegrHomepageActivity"
                 android:launchMode="singleTask"
                 android:screenOrientation="portrait"
-                android:theme="@style/comkitAppTheme"
+                android:theme="@style/comresAppTheme"
                 />
     </application>
 </manifest>
