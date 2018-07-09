@@ -2,8 +2,9 @@
 <resources>
     <string name="integrAppName">Integrated App Android</string>
 
-    <string name="integrHomepageTitle">Integrated App Android</string>
+    <string name="integrHomepageTitle">Integrated App</string>
 
-    <string name="integrHomepageMorseCodeSdk">Morse Code Sdk</string>
-    <string name="integrHomepagePasswordBankSdk">Password Bank Sdk</string>
+    <string name="integrHomepageMorseCodeApp">Morse Code App</string>
+    <string name="integrHomepagePasswordBankApp">Password Bank App</string>
+    <string name="integrHomepageExperimentApp">Experiment App</string>
 </resources>

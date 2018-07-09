@@ -21,6 +21,7 @@
         <activity
                 android:name=".entrance.IntegrEntranceActivity"
                 android:label="@string/integrAppName"
+                android:launchMode="singleTask"
                 android:screenOrientation="portrait"
                 android:theme="@style/comresTranslucentFullscreenTheme"
                 >

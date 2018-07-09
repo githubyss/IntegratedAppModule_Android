@@ -27,19 +27,27 @@
                     >
 
                 <Button
-                        android:id="@+id/btnMorseCodeSdk"
+                        android:id="@+id/btnMorseCodeApp"
                         style="@style/comresCommonBtnDefaultStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/integrHomepageMorseCodeSdk"
+                        android:text="@string/integrHomepageMorseCodeApp"
                         />
 
                 <Button
-                        android:id="@+id/btnPasswordBankSdk"
+                        android:id="@+id/btnPasswordBankApp"
                         style="@style/comresCommonBtnDefaultStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/integrHomepagePasswordBankSdk"
+                        android:text="@string/integrHomepagePasswordBankApp"
+                        />
+
+                <Button
+                        android:id="@+id/btnExperimentApp"
+                        style="@style/comresCommonBtnDefaultStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/integrHomepageExperimentApp"
                         />
             </LinearLayout>
         </LinearLayout>

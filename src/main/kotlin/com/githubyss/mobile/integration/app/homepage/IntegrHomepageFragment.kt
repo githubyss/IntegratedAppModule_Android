@@ -1,6 +1,5 @@
 package com.githubyss.mobile.integration.app.homepage
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -21,33 +20,19 @@ import kotlinx.android.synthetic.main.integr_fragment_homepage.*
  */
 @Route(path = "/integration/app/homepage/IntegrHomepageFragment")
 class IntegrHomepageFragment : ComuiBaseFragment() {
-    companion object {
-        val TAG = "IntegrHomepageFragment"
-    }
-
-    private lateinit var rootView: View
-
-    private lateinit var integrHomepageIPresenter: IntegrHomepageContract.IPresenter
-    private var integrHomepageIView = object : IntegrHomepageContract.IView {
-        override fun setPresenter(iPresenter: IntegrHomepageContract.IPresenter) {
-            integrHomepageIPresenter = iPresenter
-        }
-
-        override fun gotoMorseCodePage() {
-        }
-
-        override fun gotoPasswordBankPage() {
-        }
-    }
+    private var rootView: View? = null
 
     private val onClickListener = View.OnClickListener { v ->
-        val id = v.id
-        when (id) {
-            R.id.btnMorseCodeSdk -> {
+        when (v.id) {
+            R.id.btnMorseCodeApp -> {
                 ARouter.getInstance().build("/morsecode/app/homepage/MscdHomepageActivity").navigation()
             }
 
-            R.id.btnPasswordBankSdk -> {
+            R.id.btnPasswordBankApp -> {
+            }
+
+            R.id.btnExperimentApp -> {
+                ARouter.getInstance().build("/experiment/app/animation/ExpAnimationActivity").navigation()
             }
 
             else -> {
@@ -55,24 +40,15 @@ class IntegrHomepageFragment : ComuiBaseFragment() {
         }
     }
 
-    override fun bindPresenter() {
-        IntegrHomepagePresenter(integrHomepageIView)
-    }
 
     override fun initView() {
-        btnMorseCodeSdk.setOnClickListener(onClickListener)
-        btnPasswordBankSdk.setOnClickListener(onClickListener)
+        btnMorseCodeApp.setOnClickListener(onClickListener)
+        btnPasswordBankApp.setOnClickListener(onClickListener)
+        btnExperimentApp.setOnClickListener(onClickListener)
     }
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        bindPresenter()
-        integrHomepageIPresenter.onStandby()
-    }
-
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         rootView = inflater?.inflate(R.layout.integr_fragment_homepage, container, false) ?: rootView
         return rootView
     }
@@ -81,11 +57,5 @@ class IntegrHomepageFragment : ComuiBaseFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         initView()
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-
-        integrHomepageIPresenter.onActivityResult(requestCode, resultCode)
     }
 }

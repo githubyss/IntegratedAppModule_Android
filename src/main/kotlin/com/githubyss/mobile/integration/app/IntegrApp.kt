@@ -3,7 +3,7 @@ package com.githubyss.mobile.integration.app
 import android.app.Application
 import com.alibaba.android.arouter.launcher.ARouter
 import com.githubyss.mobile.common.kit.ComkitApplication
-import com.githubyss.mobile.common.kit.util.ComkitLogcatUtils
+import com.githubyss.mobile.common.kit.logcat.ComkitLogcatUtils
 import com.githubyss.mobile.common.network.ComnetApplication
 
 /**
