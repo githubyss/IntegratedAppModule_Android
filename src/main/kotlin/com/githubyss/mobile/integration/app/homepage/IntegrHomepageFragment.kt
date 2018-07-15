@@ -32,7 +32,7 @@ class IntegrHomepageFragment : ComuiBaseFragment() {
             }
 
             R.id.btnExperimentApp -> {
-                ARouter.getInstance().build("/experiment/app/animation/ExpAnimationActivity").navigation()
+                ARouter.getInstance().build("/experiment/app/homepage/ExpHomepageActivity").navigation()
             }
 
             else -> {

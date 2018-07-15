@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
 
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 apply plugin: 'com.alibaba.arouter'
 
@@ -45,31 +45,8 @@ android {
     buildToolsVersion BUILD_TOOLS_VERSION
     compileSdkVersion COMPILE_SDK_VERSION
 
-    defaultConfig {
-        applicationId "com.githubyss.mobile.integration.app"
-
-        minSdkVersion MIN_SDK_VERSION
-        targetSdkVersion TARGET_SDK_VERSION
-
-        versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
-//        javaCompileOptions {
-//            annotationProcessorOptions {
-//                arguments = [moduleName: project.getName()]
-//            }
-//        }
-    }
-
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-
-    sourceSets {
-        main.java.srcDirs += 'src/main/kotlin'
+    androidExtensions {
+        experimental = true
     }
 
     buildTypes {
@@ -90,11 +67,38 @@ android {
         }
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        applicationId "com.githubyss.mobile.integration.app"
+
+        minSdkVersion MIN_SDK_VERSION
+        targetSdkVersion TARGET_SDK_VERSION
+
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+//        javaCompileOptions {
+//            annotationProcessorOptions {
+//                arguments = [moduleName: project.getName()]
+//            }
+//        }
+    }
+
     packagingOptions {
         exclude 'META-INF/NOTICE.txt'
         exclude 'META-INF/NOTICE'
         exclude 'META-INF/LICENSE.txt'
         exclude 'META-INF/LICENSE'
         exclude 'META-INF/DEPENDENCIES'
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
     }
 }

@@ -17,6 +17,7 @@
                 style="@style/comresBothMatchParentStyle"
                 android:layout_marginLeft="@dimen/comresSideMarginDefault"
                 android:layout_marginRight="@dimen/comresSideMarginDefault"
+                android:gravity="center"
                 android:orientation="vertical"
                 >
 
@@ -29,24 +30,27 @@
                 <Button
                         android:id="@+id/btnMorseCodeApp"
                         style="@style/comresCommonBtnDefaultStyle"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
                         android:text="@string/integrHomepageMorseCodeApp"
                         />
 
                 <Button
                         android:id="@+id/btnPasswordBankApp"
                         style="@style/comresCommonBtnDefaultStyle"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
                         android:text="@string/integrHomepagePasswordBankApp"
                         />
 
                 <Button
                         android:id="@+id/btnExperimentApp"
                         style="@style/comresCommonBtnDefaultStyle"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
                         android:text="@string/integrHomepageExperimentApp"
                         />
             </LinearLayout>
