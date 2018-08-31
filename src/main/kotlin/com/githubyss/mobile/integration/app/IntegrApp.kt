@@ -7,7 +7,7 @@ import com.githubyss.mobile.common.kit.logcat.ComkitLogcatUtils
 import com.githubyss.mobile.common.network.ComnetApplication
 
 /**
- * IntegrApp.kt
+ * IntegrApp
  * <Description> Global Application
  * <Details>
  *
