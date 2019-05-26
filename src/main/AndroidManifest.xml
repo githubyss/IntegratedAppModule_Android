@@ -16,9 +16,9 @@
 
         <activity
                 android:name=".entrance.IntegrEntranceActivity"
+                android:alwaysRetainTaskState="true"
                 android:label="@string/integrAppName"
                 android:launchMode="singleTask"
-                android:screenOrientation="portrait"
                 android:theme="@style/comresTranslucentFullscreenTheme"
                 >
             <intent-filter>
